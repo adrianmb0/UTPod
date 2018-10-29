@@ -12,11 +12,15 @@ class Song
 {
 private:
     string artist;
-    string
-    
+    string title;
+    int size;
     
 public:
+    Song(string _artist, string _title, int _size);
     
+    bool operator >(Song const &rhs);
+    bool operator <(Song const &rhs);
+    bool operator ==(Song const &rhs);
 };
 
 
