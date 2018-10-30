@@ -71,14 +71,18 @@ bool Song::operator<(Song const &rhs){                  //check this before movi
 }
 
 bool Song::operator==(Song const &rhs){
-    if
+    if(strlen(artist) != strlen(rhs.artist)){
+        return(false);
+    }
     for(int i=0; artist[i]!= "\0"; i++){
         if(artist[i]<rhs.artist[i]){
             return(false);
         }
     }
-    if 
     
+    if(strlen(title) != strlen(rhs.title)){
+        return(false);
+    }
     for(int i=0; title[i]!= "\0"; i++){
         if(title[i]<rhs.title[i]){
             return(false);
@@ -87,6 +91,9 @@ bool Song::operator==(Song const &rhs){
         }
     }
     
+    if(size != rhs.size){
+        return(false);
+    }
     if(size>rhs.size){
         return(true);
     }else{
