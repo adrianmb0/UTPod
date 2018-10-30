@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     Song s3("A", "Hey Jude", 5);
 
-    Song s4("B", "Hey Jude", 5);
+    Song s4("AABB", "Hey Jude", 5);
 
     Song s5("Beatles", "Hey Jude", 5);
 
