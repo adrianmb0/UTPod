@@ -7,6 +7,9 @@
 
 #ifndef Song_h
 #define Song_h
+#include <string>
+
+using namespace std;
 
 class Song
 {

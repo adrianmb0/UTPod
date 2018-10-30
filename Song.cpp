@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include <cstring>
-#include "song.h"
+#include "Song.h"
 
 using namespace std;
 
@@ -18,21 +18,23 @@ Song::Song(string _artist, string _title, int _size){
 }
 
 bool Song::operator>(Song const &rhs){                  //check this before moving on
-    for(int i=0; artist[i]!= "\0"; i++){
-        if(artist[i]=="\0"){
+    for(int i=0; artist[i] != '\0'; i++){
+        if(artist[i]=='\0'){                             //CHECK LENGTH OF ARTIST NAME BEFORE EVERYTHING
             return(true);                               //edge case i.e. "AB" vs "ABC"
-        }else if(artist[i]>rhs.artist[i]){
-            return(false);
-        }else{
-            return(true);
+        }else if(artist[i]<rhs.artist[i]) {
+            return (true);
         }
     }
+
+    if (artist.length() != rhs.artist.length()) {
+        return (false);
+    }
     
-    for(int i=0; title[i]!= "\0"; i++){
-        if(title[i]>rhs.title[i]){
-            return(false);
-        }else{
-            return(true);
+    for(int i=0; title[i]!= '\0'; i++){                 //CHECK LENGTH OF
+        if(title[i]=='\0') {
+            return (true);
+        }else if(title[i]<rhs.title[i]) {
+            return (true);
         }
     }
     
@@ -45,8 +47,8 @@ bool Song::operator>(Song const &rhs){                  //check this before movi
 }
 
 bool Song::operator<(Song const &rhs){                  //check this before moving on
-    for(int i=0; artist[i]!= "\0"; i++){
-        if(artist[i]=="\0"){
+    for(int i=0; artist[i]!= '\0'; i++){
+        if(artist[i]=='\0'){
             return(true);                               //edge case i.e. "AB" vs "ABC"
         }else if(artist[i]<rhs.artist[i]){
             return(false);
@@ -55,7 +57,7 @@ bool Song::operator<(Song const &rhs){                  //check this before movi
         }
     }
     
-    for(int i=0; title[i]!= "\0"; i++){
+    for(int i=0; title[i]!= '\0'; i++){
         if(title[i]<rhs.title[i]){
             return(false);
         }else{
@@ -70,33 +72,29 @@ bool Song::operator<(Song const &rhs){                  //check this before movi
     }
 }
 
-bool Song::operator==(Song const &rhs){
-    if(strlen(artist) != strlen(rhs.artist)){
-        return(false);
+bool Song::operator==(Song const &rhs) {
+    if (artist.length() != artist.length()) {
+        return (false);
     }
-    for(int i=0; artist[i]!= "\0"; i++){
-        if(artist[i]<rhs.artist[i]){
-            return(false);
+    for (int i = 0; artist[i] != '\0'; i++) {
+        if (artist[i] < rhs.artist[i]) {
+            return (false);
         }
     }
-    
-    if(strlen(title) != strlen(rhs.title)){
-        return(false);
+
+    if (title.length() != rhs.title.length()) {
+        return (false);
     }
-    for(int i=0; title[i]!= "\0"; i++){
-        if(title[i]<rhs.title[i]){
-            return(false);
-        }else{
-            return(true);
+
+    for (int i = 0; title[i] != '\0'; i++) {
+        if (title[i] < rhs.title[i]) {
+            return (false);
         }
     }
-    
-    if(size != rhs.size){
-        return(false);
-    }
-    if(size>rhs.size){
-        return(true);
-    }else{
-        return(false);
+
+    if (size != rhs.size) {
+        return (false);
+    } else {
+        return (true);
     }
 }

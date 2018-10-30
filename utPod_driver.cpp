@@ -18,8 +18,53 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+    Song s("Beatles", "Hey Jude", 5);
+
+    Song s2("Beatles", "Hey Jude", 4);
+
+    Song s3("A", "Hey Jude", 5);
+
+    Song s4("B", "Hey Jude", 5);
+
+    Song s5("Beatles", "Hey Jude", 5);
+
+    Song s6("Beatles", "Hey Jude2", 5);
+
+    Song s7("A", "Hey Jude", 5);
+
+    Song s8("A", "Hey Jude", 5);
+
+    if(s3>s4) {
+        cout << "Operator greater than artist Works" << endl;
+    }else {
+        cout << "'>' operator artist didn't work" << endl;
+    }
+
+    if(s5>s6) {
+        cout << "Operator greater than title Works" << endl;
+    }else {
+        cout << "'>' operator title didn't work" << endl;
+    }
+
+    if(s>s2) {
+        cout << "Operator greater than size compare Works" << endl;
+    }else {
+        cout << "'>' operator size compare didn't work" << endl;
+    }
+
+    if(s7>s8) {
+        cout << "Operator greater than didn't work" << endl;
+    }else{
+        cout << "'>' operator greater than works" << endl;
+    }
+
+
+
+    }
+
+    /*
     UtPod t;
-    
+
     Song s1("Beatles", "Hey Jude1", 4);
     int result = t.addSong(s1);
     cout << "result = " << result << endl;
@@ -71,6 +116,6 @@ int main(int argc, char *argv[])
     
     t.showSongList();
     cout << "memory = " << t.getRemainingMemory() << endl;
-    
-    
-}
+     }
+    */
+
