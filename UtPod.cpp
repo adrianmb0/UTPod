@@ -11,7 +11,7 @@
 using namespace std;
 
     UtPod::UtPod(){
-        memSize = MAX_MEMORY;
+        memSize = MAX_MEMORY;           //Not sure if we should be using memSize
     }
 
     UtPod:: UtPod(int size){

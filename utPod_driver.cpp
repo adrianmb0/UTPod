@@ -16,8 +16,9 @@
 
 using namespace std;
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
+
+// SONG TESTER //
     Song s("Beatles", "Hey Jude", 5);
 
     Song s2("Beatles", "Hey Jude", 4);
@@ -34,33 +35,66 @@ int main(int argc, char *argv[])
 
     Song s8("A", "Hey Jude", 5);
 
-    if(s3>s4) {
+    if (s3 > s4) {  //Expected True
         cout << "Operator greater than artist Works" << endl;
-    }else {
+    } else {
         cout << "'>' operator artist didn't work" << endl;
     }
 
-    if(s5>s6) {
+    if (s5 > s6) { //Expected True
         cout << "Operator greater than title Works" << endl;
-    }else {
+    } else {
         cout << "'>' operator title didn't work" << endl;
     }
 
-    if(s>s2) {
+    if (s > s2) { //Expected True
         cout << "Operator greater than size compare Works" << endl;
-    }else {
+    } else {
         cout << "'>' operator size compare didn't work" << endl;
     }
 
-    if(s7>s8) {
+    if (s7 > s8) { //Expected fallthrough hence else
         cout << "Operator greater than didn't work" << endl;
-    }else{
+    } else {
         cout << "'>' operator greater than works" << endl;
     }
 
-
-
+    if (s4 < s3) {  //Expected True
+        cout << "Operator '<'  artist Works" << endl;
+    } else {
+        cout << "'>' operator artist didn't work" << endl;
     }
+
+    if (s6 < s5) { //Expected True
+        cout << "Operator '<' title Works" << endl;
+    } else {
+        cout << "'>' operator title didn't work" << endl;
+    }
+
+    if (s2 < s) { //Expected True
+        cout << "Operator '<'  size compare Works" << endl;
+    } else {
+        cout << "'<' operator size compare didn't work" << endl;
+    }
+
+    if (s8 < s7) { //Expected fallthrough hence else
+        cout << "Operator '<' didn't work" << endl;
+    } else {
+        cout << "Operator '<' works" << endl;
+    }
+
+    if (s7 == s8) { //Expected True
+        cout << "Operator '==' works" << endl;
+    } else {
+        cout << "Operator '==' incorrect" << endl;
+    }
+
+    if (s == s2) { //Expected False
+        cout << "Operator '==' incorrect" << endl;
+    } else {
+        cout << "Operator '==' works" << endl;
+    }
+}
 
     /*
     UtPod t;

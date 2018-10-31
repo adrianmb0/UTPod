@@ -19,32 +19,28 @@ Song::Song(string _artist, string _title, int _size){
 
 bool Song::operator>(Song const &rhs){
 
-    for (int i = 0; artist[i] != '\0'; i++) {                                         // is art1 > art2, true or false?
-        if (artist[i] == '\0') {                           //if artist 1 hits null first, its alphabetically "larger"
-            return (true);                                 // "AB" > "ABC"
-        }else if (rhs.artist[i] == '\0'){                 //if artist 2 hits null first, its alphabetically "larger"
-            return (false);                                // i.e. "ABD" !> "AB"
-        }else if (artist[i] < rhs.artist[i]) {            //if at any point, Artist 1 character is less than corresponding artist 2 char, art1 is larger
+    for (int i = 0; artist[i] != '\0'; i++) {            // is art1 > art2, true or false?
+        if (rhs.artist[i] == '\0'){                      //if artist 2 hits null first, its alphabetically "larger"
+            return (false);                              // i.e. "ABD" !> "AB"
+        }else if (artist[i] < rhs.artist[i]) {           //if at any point, Artist 1 character is less than corresponding artist 2 char, art1 is larger
             return (true);
         }
     }
 
-    if (artist.length() < rhs.artist.length()) {           // if art1 length is less than art2 length, and didn't chars are the same
-        return (true);                                      // up until the null in art1, then art1 is alpha "larger"
+    if (artist.length() < rhs.artist.length()) {         // if art1 length is less than art2 length, and didn't chars are the same
+        return (true);                                   // up until the null in art1, then art1 is alpha "larger"
     }
 
-    for (int i = 0; title[i] != '\0'; i++) {                                         // is tit1 > tit2, true or false?
-        if (title[i] == '\0') {                           //if title 1 hits null first, its alphabetically "larger"
-            return (true);                                 // "AB" > "ABC"
-        }else if (rhs.title[i] == '\0'){                 //if title 2 hits null first, its alphabetically "larger"
-            return (false);                                // i.e. "ABD" !> "AB"
-        }else if (title[i] < rhs.title[i]) {            //if at any point, title 1 character is less than corresponding title 2 char, tit1 is larger
+    for (int i = 0; title[i] != '\0'; i++) {             // is tit1 > tit2, true or false?
+        if (rhs.title[i] == '\0'){                 // if title 2 hits null first, its alphabetically "larger"
+            return (false);                              // i.e. "ABD" !> "AB"
+        }else if (title[i] < rhs.title[i]) {             // if at any point, title 1 character is less than corresponding title 2 char, tit1 is larger
             return (true);
         }
     }
 
-    if (title.length() < rhs.title.length()) {             // if tit1 length is less than tit2 length, and didn't chars are the same
-        return (true);                                      // up until the null in tit1, then tit1 is alpha "larger"
+    if (title.length() < rhs.title.length()) {           // if tit1 length is less than tit2 length, and didn't chars are the same
+        return (true);                                   // up until the null in tit1, then tit1 is alpha "larger"
     }
     
     if(size>rhs.size){
@@ -55,29 +51,35 @@ bool Song::operator>(Song const &rhs){
     
 }
 
-bool Song::operator<(Song const &rhs){                  //check this before moving on
-    for(int i=0; artist[i]!= '\0'; i++){
-        if(artist[i]=='\0'){
-            return(true);                               //edge case i.e. "AB" vs "ABC"
-        }else if(artist[i]<rhs.artist[i]){
-            return(false);
-        }else{
-            return(true);
+bool Song::operator<(Song const &rhs) {                  //check this before moving on
+    for (int i = 0; artist[i] != '\0'; i++) {
+        if (rhs.artist[i] == '\0') {
+            return (true);                               //edge case i.e. "ABC" vs "AB"
+        } else if (artist[i] > rhs.artist[i]) {
+            return (false);
         }
     }
-    
-    for(int i=0; title[i]!= '\0'; i++){
-        if(title[i]<rhs.title[i]){
-            return(false);
-        }else{
-            return(true);
+
+    if (artist.length() > rhs.artist.length()) {         // if art1 length is less than art2 length, and didn't chars are the same
+        return (false);                                   // up until the null in art1, then art1 is alpha "larger"
+    }
+
+    for (int i = 0; title[i] != '\0'; i++) {             // is tit1 < tit2, true or false?
+        if (rhs.title[i] == '\0') {                      // if title 2 hits null first, its alphabetically "larger"
+            return (true);                               // "ABC" < "AB"
+        } else if (title[i] > rhs.title[i]) {             // if at any point, title 1 character is less than corresponding title 2 char, tit1 is larger
+            return (true);
         }
     }
-    
-    if(size>rhs.size){
-        return(true);
-    }else{
-        return(false);
+
+    if (title.length() > rhs.title.length()) {           // if tit1 length is less than tit2 length, and didn't chars are the same
+        return (false);                                   // up until the null in tit1, then tit1 is alpha "larger"
+    }
+
+    if (size < rhs.size) {
+        return (true);
+    } else {
+        return (false);
     }
 }
 
