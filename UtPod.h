@@ -113,21 +113,21 @@ public:
      output parms -
      */
     void clearMemory();
-    
-    
+
+
     /* FUNCTION - int getTotalMemory
      *  returns the total amount of memory in the UtPod
      o will do nothing if there are less than two songs in the current list
-     
+
      input parms -
-     
+
      output parms -
      */
-    
+
     int getTotalMemory() {
         return memSize;
     }
-    
+
     
     
     /* FUNCTION - int getRemainingMemory

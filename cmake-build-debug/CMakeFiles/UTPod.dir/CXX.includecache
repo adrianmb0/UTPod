@@ -6,15 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/Users/adrianmelo/Documents/GitHub/UTPod/Song.cpp
-stdio.h
--
-cstring
--
-Song.h
-/Users/adrianmelo/Documents/GitHub/UTPod/Song.h
-
 /Users/adrianmelo/Documents/GitHub/UTPod/Song.h
 string
 -
+
+/Users/adrianmelo/Documents/GitHub/UTPod/UtPod.cpp
+stdio.h
+-
+UtPod.h
+/Users/adrianmelo/Documents/GitHub/UTPod/UtPod.h
+
+/Users/adrianmelo/Documents/GitHub/UTPod/UtPod.h
+Song.h
+/Users/adrianmelo/Documents/GitHub/UTPod/Song.h
+
+/Users/adrianmelo/Documents/GitHub/UTPod/utPod_driver.cpp
+cstdlib
+-
+iostream
+-
+Song.h
+/Users/adrianmelo/Documents/GitHub/UTPod/Song.h
+UtPod.h
+/Users/adrianmelo/Documents/GitHub/UTPod/UtPod.h
 
