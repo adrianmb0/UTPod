@@ -1,4 +1,4 @@
-# Install script for directory: /Users/adrianmelo/Documents/GitHub/UTPod
+# Install script for directory: /Users/davidfernandez/EE312/UTPod
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/davidfernandez/EE312/UTPod/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -18,6 +18,7 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 
+    /*
 // SONG TESTER //
     Song s("Beatles", "Hey Jude", 5);
 
@@ -35,69 +36,73 @@ int main(int argc, char *argv[]) {
 
     Song s8("A", "Hey Jude", 5);
 
-    if (s3 > s4) {  //Expected True
+
+
+    if (s4 > s3) {  //Expected False
         cout << "Operator greater than artist Works" << endl;
     } else {
         cout << "'>' operator artist didn't work" << endl;
     }
 
-    if (s5 > s6) { //Expected True
+    if (s6 > s5) { //Expected False
         cout << "Operator greater than title Works" << endl;
     } else {
         cout << "'>' operator title didn't work" << endl;
     }
 
-    if (s > s2) { //Expected True
+    if (s2 > s) { //Expected False
         cout << "Operator greater than size compare Works" << endl;
     } else {
         cout << "'>' operator size compare didn't work" << endl;
     }
 
-    if (s7 > s8) { //Expected fallthrough hence else
+    if (s8 > s7) { //Expected to print "didn't work"
         cout << "Operator greater than didn't work" << endl;
     } else {
         cout << "'>' operator greater than works" << endl;
     }
 
-    if (s4 < s3) {  //Expected True
+    if (s3 < s4) {  //Expected False
         cout << "Operator '<'  artist Works" << endl;
     } else {
         cout << "'>' operator artist didn't work" << endl;
     }
 
-    if (s6 < s5) { //Expected True
+    if (s5 < s6) { //Expected False
         cout << "Operator '<' title Works" << endl;
     } else {
         cout << "'>' operator title didn't work" << endl;
     }
 
-    if (s2 < s) { //Expected True
+    if (s < s2) { //Expected False
         cout << "Operator '<'  size compare Works" << endl;
     } else {
         cout << "'<' operator size compare didn't work" << endl;
     }
 
-    if (s8 < s7) { //Expected fallthrough hence else
+    if (s7 < s8) { //Expected "didn't work"
         cout << "Operator '<' didn't work" << endl;
     } else {
         cout << "Operator '<' works" << endl;
     }
 
-    if (s7 == s8) { //Expected True
+    if (s8 == s7) { //Expected True
         cout << "Operator '==' works" << endl;
     } else {
         cout << "Operator '==' incorrect" << endl;
     }
 
-    if (s == s2) { //Expected False
+    if (s2 == s) { //Expected False
         cout << "Operator '==' incorrect" << endl;
     } else {
         cout << "Operator '==' works" << endl;
     }
 }
+    */
 
-    /*
+
     UtPod t;
+    UtPod t2(256);
 
     Song s1("Beatles", "Hey Jude1", 4);
     int result = t.addSong(s1);
@@ -141,8 +146,7 @@ int main(int argc, char *argv[]) {
     
     result = t.removeSong(s4);
     cout << "delete result = " << result << endl;
-    
-    
+
     t.showSongList();
     
     result = t.addSong(s5);
