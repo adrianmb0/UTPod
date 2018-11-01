@@ -2,7 +2,7 @@
 //  song.cpp
 //  
 //
-//  Created by David Fernandez on 10/29/18.
+//  Created by David Fernandez and Adrian Melo on 10/28/18.
 //
 
 #include <stdio.h>

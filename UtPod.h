@@ -2,7 +2,7 @@
 //  UtPod.h
 //  
 //
-//  Created by David Fernandez on 10/28/18.
+//  Created by David Fernandez and Adrian Melo on 10/28/18.
 //
 
 #ifndef UTPOD_H

@@ -7,7 +7,9 @@
  This is a basic driver for the UtPod.
  
  You will want to do more complete testing.
- 
+
+ Edited by: David Fernandez and Adrian Melo
+
  */
 #include <cstdlib>
 #include <iostream>

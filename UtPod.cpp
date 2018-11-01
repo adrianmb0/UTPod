@@ -2,7 +2,7 @@
 //  UtPod.cpp
 //  
 //
-//  Created by David Fernandez on 10/28/18.
+//  Created by David Fernandez and Adrian Melo on 10/28/18.
 //
 
 #include <stdio.h>
@@ -34,9 +34,9 @@ using namespace std;
 
      precondition: s is a valid Song
 
-     input parms -
+     input parms - Song s
 
-     output parms -
+     output parms - 0 for a successful add, -1 for unsuccessful add
      */
 
     int UtPod::addSong(Song const &s) {
@@ -64,19 +64,6 @@ using namespace std;
         return NO_MEMORY;
     }
 
-       /*if(getRemainingMemory() == memSize){    //if Memory is completely empty (NO SONGS ADDED)
-                songs = newSong;                //head song gets the first song
-                newSong->next = NULL;           //make the song you're adding an end node
-            }else{
-                newSong->next = songs;      //add song to the next
-                songs = newSong;            //songTail is updated
-            }
-            return SUCCESS;
-        }else{
-            return NO_MEMORY;
-        }*/
-
-
     /* FUNCTION - int removeSong
      * attempts to remove a song from the UtPod
      * removes the first instance of a song that is in the the UtPod multiple times
@@ -84,9 +71,9 @@ using namespace std;
      o returns -1 if nothing is removed
 
 
-     input parms -
+     input parms - Song s
 
-     output parms -
+     output parms - 0 for a successful remove, -1 for unsuccessful remove
      */
 
     int UtPod::removeSong(Song const &s){
@@ -118,9 +105,9 @@ using namespace std;
      *  shuffles the songs into random order
      o will do nothing if there are less than two songs in the current list
 
-     input parms -
+     input parms - None
 
-     output parms -
+     output parms - None
      */
 
     void UtPod::shuffle(){
@@ -136,34 +123,33 @@ using namespace std;
             temp = temp->next;
             count++;
         }
+        //Condition for if there are less than two songs in the list
+        if(count > 2){
+            unsigned int currentTime =  (unsigned)time(0);
 
-        unsigned int currentTime =  (unsigned)time(0);
+            srand(currentTime);                         //seed random time to rand number generator
 
-        srand(currentTime);                     //seed random time to rand number generator
+            for(int i=0; i< 2*count ; i++) {
 
-        for(int i=0; i< 2*count ; i++) {
+                int rndBound1 = (rand() % count);       //see random numbers
+                int rndBound2 = (rand() % count);
 
-            int rndBound1 = (rand() % count);       //see random numbers
-            int rndBound2 = (rand() % count);
-
-            point1 = songs;                         //set pointers to the beginning of the song list
-            point2 = songs;
+                point1 = songs;                         //set pointers to the beginning of the song list
+                point2 = songs;
 
 
-            for (int j = 0; j < rndBound1; j++) {   //find a random node
-                point1 = point1->next;
+                for (int j = 0; j < rndBound1; j++) {   //find a random node
+                    point1 = point1->next;
+                }
+
+                for (int k = 0; k < rndBound2; k++) {   //find a random node to swap with.
+                    point2 = point2->next;
+                }
+                songTemp = point1->s;
+                point1->s = point2->s;                  //
+                point2->s = songTemp;
             }
-
-            for (int k = 0; k < rndBound2; k++) {   //find a random node to swap with.
-                point2 = point2->next;
-            }
-            songTemp = point1->s;
-            point1->s = point2->s;                  //
-            point2->s = songTemp;
         }
-
-
-
     }
 
 
@@ -172,9 +158,9 @@ using namespace std;
      * prints the current list of songs in order from first to last to standard output
      * format - Title, Artist, size in MB (one song per line)
 
-     input parms -
+     input parms - None
 
-     output parms -
+     output parms - None
      */
 
     void UtPod::showSongList(){
@@ -200,8 +186,8 @@ using namespace std;
 
     void UtPod::sortSongList() {
         Song temp;
-        SongNode *point1 = songs;
-        SongNode *point2 = point1->next;
+        SongNode *point1;
+        SongNode *point2;
         bool swap;
 
         do{
