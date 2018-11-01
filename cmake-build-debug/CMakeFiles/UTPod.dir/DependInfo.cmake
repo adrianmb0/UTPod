@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/davidfernandez/EE312/UTPod/Song.cpp" "/Users/davidfernandez/EE312/UTPod/cmake-build-debug/CMakeFiles/UTPod.dir/Song.cpp.o"
-  "/Users/davidfernandez/EE312/UTPod/UtPod.cpp" "/Users/davidfernandez/EE312/UTPod/cmake-build-debug/CMakeFiles/UTPod.dir/UtPod.cpp.o"
-  "/Users/davidfernandez/EE312/UTPod/utPod_driver.cpp" "/Users/davidfernandez/EE312/UTPod/cmake-build-debug/CMakeFiles/UTPod.dir/utPod_driver.cpp.o"
+  "/Users/adrianmelo/Documents/GitHub/UTPod/Song.cpp" "/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/CMakeFiles/UTPod.dir/Song.cpp.o"
+  "/Users/adrianmelo/Documents/GitHub/UTPod/UtPod.cpp" "/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/CMakeFiles/UTPod.dir/UtPod.cpp.o"
+  "/Users/adrianmelo/Documents/GitHub/UTPod/utPod_driver.cpp" "/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/CMakeFiles/UTPod.dir/utPod_driver.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/Users/davidfernandez/EE312/UTPod/Song.h
+/Users/adrianmelo/Documents/GitHub/UTPod/Song.h
 string
 -
 
-/Users/davidfernandez/EE312/UTPod/UtPod.cpp
+/Users/adrianmelo/Documents/GitHub/UTPod/UtPod.cpp
 stdio.h
 -
 UtPod.h
-/Users/davidfernandez/EE312/UTPod/UtPod.h
+/Users/adrianmelo/Documents/GitHub/UTPod/UtPod.h
 Song.h
-/Users/davidfernandez/EE312/UTPod/Song.h
+/Users/adrianmelo/Documents/GitHub/UTPod/Song.h
 iostream
 -
 ctime
@@ -24,7 +24,7 @@ ctime
 cstdlib
 -
 
-/Users/davidfernandez/EE312/UTPod/UtPod.h
+/Users/adrianmelo/Documents/GitHub/UTPod/UtPod.h
 Song.h
-/Users/davidfernandez/EE312/UTPod/Song.h
+/Users/adrianmelo/Documents/GitHub/UTPod/Song.h
 

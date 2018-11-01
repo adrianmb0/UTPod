@@ -199,30 +199,7 @@ using namespace std;
      */
 
     void UtPod::sortSongList() {
-        /*Song temp;
-        SongNode *point1;
-        SongNode *point2;
-        bool swap;
 
-
-        do{
-            while(point2!=NULL){
-                if(point1->s > point2->s) {
-                    temp = point1->s;
-                    point1->s = point2->s;
-                    point2->s = temp;
-                    swap = true;
-                }else {
-                    point1 = point1->next;
-                    point2 = point2->next;
-                }
-
-                }
-            }while(swap == true);
-        }*/
-
-
-/*
         Song songTemp("", "", 0);
 
         SongNode *point1 = songs;
@@ -232,19 +209,30 @@ using namespace std;
         SongNode *min = new SongNode;
 
         while (point1->next != NULL) {
-            min = point1;
+            min->s = point1->s;
 
-            if (min->s < point2->s) {
-                min->s = point2->s;
+            while (point2 != NULL) {
+                if (min->s > point2->s) {
+                    min->s = point2->s;
+                }
+                point2 = point2->next;
+            }
+
+            SongNode *temp = songs;
+
+            while(temp != NULL){
+                if(min->s == temp->s){
+                    break;
+                }
+                temp = temp->next;
             }
 
             songTemp = point1->s;
             point1->s = min->s;
-            min->s = songTemp;
+            temp->s = songTemp;
             point1 = point1->next;
+            point2 = point1->next;
         }
-    }
-    */
     }
 
 

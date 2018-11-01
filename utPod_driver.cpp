@@ -114,6 +114,12 @@ int main(int argc, char *argv[]) {
     result = t.addSong(s2);
     cout << "result = " << result << endl;
 
+    if (s1 < s2) { //Expected False
+        cout << "Operator '<'  size compare Works" << endl;
+    } else {
+        cout << "'<' operator size compare didn't work" << endl;
+    }
+
     t.showSongList();
 
     Song s3("Beatles", "Hey Jude3", 6);

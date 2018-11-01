@@ -43,7 +43,7 @@ bool Song::operator>(Song const &rhs){
     for (int i = 0; title[i] != '\0'; i++) {             // is tit1 > tit2, true or false?
         if (rhs.title[i] == '\0'){                       // if title 2 hits null first, its alphabetically "larger"
             return (false);                              // i.e. "ABD" !> "AB"
-        }else if (title[i] < rhs.title[i]) {             // if at any point, title 1 character is less than corresponding title 2 char, tit1 is larger
+        }else if (title[i] > rhs.title[i]) {             // if at any point, title 1 character is less than corresponding title 2 char, tit1 is larger
             return (true);
         }
     }
@@ -76,7 +76,7 @@ bool Song::operator<(Song const &rhs) {                  //check this before mov
     for (int i = 0; title[i] != '\0'; i++) {             // is tit1 < tit2, true or false?
         if (rhs.title[i] == '\0') {                      // if title 2 hits null first, its alphabetically "larger"
             return (true);                               // "ABC" < "AB"
-        } else if (title[i] > rhs.title[i]) {            // if at any point, title 1 character is less than corresponding title 2 char, tit1 is larger
+        } else if (title[i] < rhs.title[i]) {            // if at any point, title 1 character is less than corresponding title 2 char, tit1 is larger
             return (true);
         }
     }
