@@ -8,96 +8,96 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug"/>
+				<Option working_dir="/Users/davidfernandez/EE312/UTPod/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug"/>
+				<Option working_dir="/Users/davidfernandez/EE312/UTPod/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug"/>
+				<Option working_dir="/Users/davidfernandez/EE312/UTPod/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="UTPod">
-				<Option output="/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/UTPod" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug"/>
+				<Option output="/Users/davidfernandez/EE312/UTPod/cmake-build-debug/UTPod" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/davidfernandez/EE312/UTPod/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/adrianmelo/Documents/GitHub/UTPod/."/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Users/davidfernandez/EE312/UTPod/."/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 UTPod"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 UTPod"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="UTPod/fast">
-				<Option output="/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/UTPod" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug"/>
+				<Option output="/Users/davidfernandez/EE312/UTPod/cmake-build-debug/UTPod" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/davidfernandez/EE312/UTPod/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/adrianmelo/Documents/GitHub/UTPod/."/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Users/davidfernandez/EE312/UTPod/."/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 UTPod/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/adrianmelo/Documents/GitHub/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 UTPod/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/davidfernandez/EE312/UTPod/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/adrianmelo/Documents/GitHub/UTPod/Song.cpp">
+		<Unit filename="/Users/davidfernandez/EE312/UTPod/Song.cpp">
 			<Option target="UTPod"/>
 		</Unit>
-		<Unit filename="/Users/adrianmelo/Documents/GitHub/UTPod/Song.h">
+		<Unit filename="/Users/davidfernandez/EE312/UTPod/Song.h">
 			<Option target="UTPod"/>
 		</Unit>
-		<Unit filename="/Users/adrianmelo/Documents/GitHub/UTPod/UtPod.cpp">
+		<Unit filename="/Users/davidfernandez/EE312/UTPod/UtPod.cpp">
 			<Option target="UTPod"/>
 		</Unit>
-		<Unit filename="/Users/adrianmelo/Documents/GitHub/UTPod/UtPod.h">
+		<Unit filename="/Users/davidfernandez/EE312/UTPod/UtPod.h">
 			<Option target="UTPod"/>
 		</Unit>
-		<Unit filename="/Users/adrianmelo/Documents/GitHub/UTPod/utPod_driver.cpp">
+		<Unit filename="/Users/davidfernandez/EE312/UTPod/utPod_driver.cpp">
 			<Option target="UTPod"/>
 		</Unit>
-		<Unit filename="/Users/adrianmelo/Documents/GitHub/UTPod/CMakeLists.txt">
+		<Unit filename="/Users/davidfernandez/EE312/UTPod/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
