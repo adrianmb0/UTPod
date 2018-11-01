@@ -143,22 +143,22 @@ using namespace std;
 
         for(int i=0; i< 2*count ; i++) {
 
-            int rndBound1 = (rand() % count);
+            int rndBound1 = (rand() % count);       //see random numbers
             int rndBound2 = (rand() % count);
 
-            point1 = songs;
+            point1 = songs;                         //set pointers to the beginning of the song list
             point2 = songs;
 
 
-            for (int j = 0; j < rndBound1; j++) {
+            for (int j = 0; j < rndBound1; j++) {   //find a random node
                 point1 = point1->next;
             }
 
-            for (int k = 0; k < rndBound2; k++) {
+            for (int k = 0; k < rndBound2; k++) {   //find a random node to swap with.
                 point2 = point2->next;
             }
             songTemp = point1->s;
-            point1->s = point2->s;
+            point1->s = point2->s;                  //
             point2->s = songTemp;
         }
 
@@ -205,59 +205,24 @@ using namespace std;
         bool swap;
 
         do{
-            swap = false;
+            swap = false;                               //NO swap has been made ... yet
             point1 = songs;
-            point2 = point1->next;
+            point2 = point1->next;                      //set pointers to begining nodes of the list
             while(point2!=NULL){
-                if(point1->s > point2->s) {
-                     temp = point1->s;
+                if(point1->s > point2->s) {             //if the first song is better than the second song
+                     temp = point1->s;                  //SWAP
                      point1->s = point2->s;
                      point2->s = temp;
-                     swap = true;
+                     swap = true;                       //set SWAP to true
                      point1 = point2;
                      point2 = point2->next;
                 }else{
-                    point1 = point1->next;
+                    point1 = point1->next;              //otherwise don't swap and move to next 2 nodes
                     point2 = point2->next;
                 }
             }
-        }while(swap == true);
+        }while(swap == true);                           //While a swap has been made, the list may not be completely sorted so keep going
 }
-
-        /*
-        Song songTemp("", "", 0);
-
-        SongNode *point1 = songs;
-        SongNode *point2 = songs->next;
-
-
-        SongNode *min = new SongNode;
-
-        while (point1->next != NULL) {
-            min->s = point1->s;
-
-            while (point2 != NULL) {
-                if (min->s > point2->s) {
-                    min->s = point2->s;
-                }
-                point2 = point2->next;
-            }
-
-            SongNode *temp = songs;
-
-            while(temp != NULL){
-                if(min->s == temp->s){
-                    break;
-                }
-                temp = temp->next;
-            }
-
-            songTemp = point1->s;
-            point1->s = min->s;
-            temp->s = songTemp;
-            point1 = point1->next;
-            point2 = point1->next;
-        }*/
 
 
 
@@ -305,5 +270,5 @@ using namespace std;
     }
 
     UtPod::~UtPod(){
-
+        clearMemory();
     }
