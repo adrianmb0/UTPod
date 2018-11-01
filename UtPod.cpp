@@ -7,6 +7,11 @@
 
 #include <stdio.h>
 #include "UtPod.h"
+#include "Song.h"
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
 
 using namespace std;
 
@@ -34,9 +39,42 @@ using namespace std;
      output parms -
      */
 
-    int UtPod::addSong(Song const &s){
-        return 0;
+    int UtPod::addSong(Song const &s) {
+        if ((UtPod::getRemainingMemory()) != 0) {
+            //add song to beginning;
+            SongNode *newSong = new SongNode;                  //create newSong node
+            SongNode *temp = songs;
+
+            newSong->s = s;
+
+            if(temp == NULL){
+                songs = newSong;
+                songs->next = NULL;
+                return SUCCESS;
+            }else {
+                while (temp->next != NULL) {
+                    temp = temp->next;
+                }
+
+                temp->next = newSong;
+                newSong->next = NULL;
+                return SUCCESS;
+            }
+        }
+        return NO_MEMORY;
     }
+
+       /*if(getRemainingMemory() == memSize){    //if Memory is completely empty (NO SONGS ADDED)
+                songs = newSong;                //head song gets the first song
+                newSong->next = NULL;           //make the song you're adding an end node
+            }else{
+                newSong->next = songs;      //add song to the next
+                songs = newSong;            //songTail is updated
+            }
+            return SUCCESS;
+        }else{
+            return NO_MEMORY;
+        }*/
 
 
     /* FUNCTION - int removeSong
@@ -52,7 +90,27 @@ using namespace std;
      */
 
     int UtPod::removeSong(Song const &s){
-        return 0;
+
+        SongNode *prev;
+        SongNode *temp;
+
+        temp = songs;
+        prev = songs;
+
+        while(temp != NULL){
+            if(temp->s == s) {
+                if (temp == songs) {
+                    songs = temp->next;
+                }
+                prev->next = temp->next;
+                delete (temp);
+                return SUCCESS;
+            }
+            prev = temp;
+            temp = temp->next;
+
+        }
+        return NOT_FOUND;
     }
 
 
@@ -66,8 +124,48 @@ using namespace std;
      */
 
     void UtPod::shuffle(){
+        Song songTemp("","", 0);
+        SongNode *point1;
+        SongNode *point2;
+
+        SongNode *temp = songs;
+
+        int count =0;
+
+        while(temp != NULL){
+            temp = temp->next;
+            count++;
+        }
+
+        unsigned int currentTime =  (unsigned)time(0);
+
+        srand(currentTime);                     //seed random time to rand number generator
+
+        for(int i=0; i< 2*count ; i++) {
+
+            int rndBound1 = (rand() % count);
+            int rndBound2 = (rand() % count);
+
+            point1 = songs;
+            point2 = songs;
+
+
+            for (int j = 0; j < rndBound1; j++) {
+                point1 = point1->next;
+            }
+
+            for (int k = 0; k < rndBound2; k++) {
+                point2 = point2->next;
+            }
+            songTemp = point1->s;
+            point1->s = point2->s;
+            point2->s = songTemp;
+        }
+
+
 
     }
+
 
 
     /* FUNCTION - void showSongList
@@ -80,7 +178,14 @@ using namespace std;
      */
 
     void UtPod::showSongList(){
+        SongNode *temp;
 
+        temp = songs;
+
+        while(temp != NULL){
+            cout << temp->s.getTitle()<< ", " << temp->s.getArtist()<< ", "<< temp->s.getSize() << "MB" << endl;
+            temp = temp->next;
+        }
     }
 
 
@@ -93,9 +198,55 @@ using namespace std;
      output parms -
      */
 
-    void UtPod::sortSongList(){
+    void UtPod::sortSongList() {
+        /*Song temp;
+        SongNode *point1;
+        SongNode *point2;
+        bool swap;
 
+
+        do{
+            while(point2!=NULL){
+                if(point1->s > point2->s) {
+                    temp = point1->s;
+                    point1->s = point2->s;
+                    point2->s = temp;
+                    swap = true;
+                }else {
+                    point1 = point1->next;
+                    point2 = point2->next;
+                }
+
+                }
+            }while(swap == true);
+        }*/
+
+
+/*
+        Song songTemp("", "", 0);
+
+        SongNode *point1 = songs;
+        SongNode *point2 = songs->next;
+
+
+        SongNode *min = new SongNode;
+
+        while (point1->next != NULL) {
+            min = point1;
+
+            if (min->s < point2->s) {
+                min->s = point2->s;
+            }
+
+            songTemp = point1->s;
+            point1->s = min->s;
+            min->s = songTemp;
+            point1 = point1->next;
+        }
     }
+    */
+    }
+
 
 
     /* FUNCTION - void clearMemory
@@ -106,7 +257,19 @@ using namespace std;
      output parms -
      */
     void UtPod::clearMemory(){
+        SongNode *temp;
+        SongNode *next;
 
+        temp = songs;
+
+        while(temp != NULL){
+            next = temp->next;
+            delete(temp);
+            temp = next;
+        }
+
+        songs = temp;               //Comment out this and show, is MEMORY leaking or does
+                                    //deconstructor take care of this?
     }
 
     /* FUNCTION - int getRemainingMemory
@@ -118,7 +281,15 @@ using namespace std;
      */
 
     int UtPod::getRemainingMemory(){
+        int usedMem = 0;
 
+        SongNode *temp = songs;
+
+        while(temp != NULL){
+            usedMem += temp->s.getSize();
+            temp = temp->next;
+        }
+        return ((UtPod::getTotalMemory()) - usedMem);       //return the total mem - used mem
     }
 
     UtPod::~UtPod(){

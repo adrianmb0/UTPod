@@ -10,11 +10,20 @@
 #include "Song.h"
 
 using namespace std;
+Song::Song(){
+    artist = "";
+    title = "";
+    size = 512;
+}
 
 Song::Song(string _artist, string _title, int _size){
     artist = _artist;
     title = _title;
     size = _size;
+}
+
+int Song::getSize() const{
+    return size;
 }
 
 bool Song::operator>(Song const &rhs){

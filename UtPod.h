@@ -22,13 +22,17 @@ private:
     {
         Song s;
         SongNode *next;
+
+        SongNode():s(),next(NULL){}        //default constructor for Song Node
     };
     
     SongNode *songs;  //the head pointer
+
     
     int memSize;
     
 public:
+
     //Default constructor
     //set the memory size to MAX_MEMORY
     UtPod();
@@ -142,7 +146,8 @@ public:
     
     
     ~UtPod();
-    
+
+
 };
 
 #endif /* UtPod_h */
