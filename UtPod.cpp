@@ -146,7 +146,7 @@ using namespace std;
                     point2 = point2->next;
                 }
                 songTemp = point1->s;
-                point1->s = point2->s;                  //
+                point1->s = point2->s;
                 point2->s = songTemp;
             }
         }
@@ -190,10 +190,12 @@ using namespace std;
         SongNode *point2;
         bool swap;
 
+        // Bubble Sort Algorithm //
+
         do{
             swap = false;                               //NO swap has been made ... yet
             point1 = songs;
-            point2 = point1->next;                      //set pointers to begining nodes of the list
+            point2 = point1->next;                      //set pointers to beginning nodes of the list
             while(point2!=NULL){
                 if(point1->s > point2->s) {             //if the first song is better than the second song
                      temp = point1->s;                  //SWAP
@@ -207,7 +209,7 @@ using namespace std;
                     point2 = point2->next;
                 }
             }
-        }while(swap == true);                           //While a swap has been made, the list may not be completely sorted so keep going
+        }while(swap);                                   //While a swap has been made, the list may not be completely sorted so keep going
 }
 
 
@@ -215,9 +217,9 @@ using namespace std;
     /* FUNCTION - void clearMemory
      * clears all the songs from memory
 
-     input parms -
+     input parms - None
 
-     output parms -
+     output parms - None
      */
     void UtPod::clearMemory(){
         SongNode *temp;
@@ -225,22 +227,21 @@ using namespace std;
 
         temp = songs;
 
-        while(temp != NULL){
+        while(temp != NULL){        //Loop through the whole linked list deleting one node at a time
             next = temp->next;
             delete(temp);
             temp = next;
         }
 
         songs = temp;               //Comment out this and show, is MEMORY leaking or does
-                                    //deconstructor take care of this?
     }
 
     /* FUNCTION - int getRemainingMemory
      *  returns the amount of memory available for adding new songs
 
-     input parms -
+     input parms - None
 
-     output parms -
+     output parms - Outputs the amount of memory remaining in the UtPod
      */
 
     int UtPod::getRemainingMemory(){
@@ -255,6 +256,8 @@ using namespace std;
         return ((UtPod::getTotalMemory()) - usedMem);       //return the total mem - used mem
     }
 
+    //Destructor for the UtPod.
+    // * Clears the whole UtPod
     UtPod::~UtPod(){
         clearMemory();
     }
