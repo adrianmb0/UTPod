@@ -40,7 +40,7 @@ using namespace std;
      */
 
     int UtPod::addSong(Song const &s) {
-        if ((UtPod::getRemainingMemory()) != 0) {
+        if ((UtPod::getRemainingMemory()) >= s.getSize()) {
             //add song to beginning;
             SongNode *newSong = new SongNode;                  //create newSong node
             SongNode *temp = songs;
@@ -73,7 +73,7 @@ using namespace std;
 
      input parms - Song s
 
-     output parms - 0 for a successful remove, -1 for unsuccessful remove
+     output parms - 0 for a successful remove, -1 for unsuccessful remove -2 for Song Not found
      */
 
     int UtPod::removeSong(Song const &s){
@@ -137,17 +137,20 @@ using namespace std;
                 point1 = songs;                         //set pointers to the beginning of the song list
                 point2 = songs;
 
+                if(point1->next == NULL || point1->next->next == NULL){
+                    //don't shuffle
+                }else {
+                    for (int j = 0; j < rndBound1; j++) {   //find a random node
+                        point1 = point1->next;
+                    }
 
-                for (int j = 0; j < rndBound1; j++) {   //find a random node
-                    point1 = point1->next;
+                    for (int k = 0; k < rndBound2; k++) {   //find a random node to swap with.
+                        point2 = point2->next;
+                    }
+                    songTemp = point1->s;
+                    point1->s = point2->s;
+                    point2->s = songTemp;
                 }
-
-                for (int k = 0; k < rndBound2; k++) {   //find a random node to swap with.
-                    point2 = point2->next;
-                }
-                songTemp = point1->s;
-                point1->s = point2->s;
-                point2->s = songTemp;
             }
         }
     }
@@ -179,9 +182,9 @@ using namespace std;
      *  sorts the songs in ascending order
      o will do nothing if there are less than two songs in the current list
 
-     input parms -
+     input parms - NONE
 
-     output parms -
+     output parms - NONE
      */
 
     void UtPod::sortSongList() {
@@ -192,25 +195,26 @@ using namespace std;
 
         // Bubble Sort Algorithm //
 
-        do{
-            swap = false;                               //NO swap has been made ... yet
-            point1 = songs;
-            point2 = point1->next;                      //set pointers to beginning nodes of the list
-            while(point2!=NULL){
-                if(point1->s > point2->s) {             //if the first song is better than the second song
-                     temp = point1->s;                  //SWAP
-                     point1->s = point2->s;
-                     point2->s = temp;
-                     swap = true;                       //set SWAP to true
-                     point1 = point2;
-                     point2 = point2->next;
-                }else{
-                    point1 = point1->next;              //otherwise don't swap and move to next 2 nodes
-                    point2 = point2->next;
+        if(getRemainingMemory() != getTotalMemory()){
+            do {
+                swap = false;                               //NO swap has been made ... yet
+                point1 = songs;
+                point2 = point1->next;                      //set pointers to beginning nodes of the list
+                while (point2 != NULL) {
+                    if (point1->s < point2->s) {             //if the first song is higher than the second song
+                        temp = point1->s;                  //SWAP
+                        point1->s = point2->s;
+                        point2->s = temp;
+                        swap = true;                       //set SWAP to true
+                        point1 = point2;
+                        point2 = point2->next;
+                    } else {
+                        point1 = point1->next;              //otherwise don't swap and move to next 2 nodes
+                        point2 = point2->next;
+                    }
                 }
-            }
-        }while(swap);                                   //While a swap has been made, the list may not be completely sorted so keep going
-}
+            } while (swap);                                   //While a swap has been made, the list may not be completely sorted so keep going
+        }}
 
 
 

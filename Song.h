@@ -28,7 +28,11 @@ public:
     }
 
     void setArtist(string n) {
-        artist = n;
+        if(n== "") {
+            return;
+        }else{
+            artist = n;
+        }
     }
 
     string getTitle() const{
@@ -36,13 +40,21 @@ public:
     }
 
     void setTitle(string m){
-        title = m;
+        if(m== "") {
+            return;
+        }else{
+            title = m;
+        }
     }
 
     int getSize() const;
 
     void setSize(int p){
-        size = p;
+        if (p<=0){
+            return;
+        }else {
+            size = p;
+        }
     }
     
     bool operator >(Song const &rhs);
