@@ -7,7 +7,7 @@
 
 #ifndef UTPOD_H
 #define UTPOD_H
-#include "Song.h"
+#include "song.h"
 
 //UtPod class declaration
 class UtPod
@@ -26,7 +26,7 @@ private:
         SongNode():s(),next(NULL){}        //default constructor for Song Node
     };
     
-    SongNode *songs;  //the head pointer
+    SongNode *songs = NULL;  //the head pointer
 
     
     int memSize;

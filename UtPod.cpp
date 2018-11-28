@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include "UtPod.h"
-#include "Song.h"
+#include "song.h"
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
@@ -39,13 +39,14 @@ using namespace std;
      output parms - 0 for a successful add, -1 for unsuccessful add
      */
 
-    int UtPod::addSong(Song const &s) {
-        if ((UtPod::getRemainingMemory()) >= s.getSize()) {
+    int UtPod::addSong(Song const &s2) {
+        SongNode *temp = songs;
+
+        if ((UtPod::getRemainingMemory()) >= s2.getSize()) {
             //add song to beginning;
             SongNode *newSong = new SongNode;                  //create newSong node
-            SongNode *temp = songs;
 
-            newSong->s = s;
+            newSong->s = s2;
 
             if(temp == NULL){
                 songs = newSong;

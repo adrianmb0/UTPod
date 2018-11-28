@@ -1,0 +1,103 @@
+cmt,Test0: Opening a file.
+cmt,Test1: adding a null song and removing a song from an empty list. Expect errors -1 and -2 respectively - NO_MEMORY and NOT_FOUND.
+add,Hello World,A Test,0
+rm,Hello World,A Test,0
+shw
+cmt,Test2: Adding a single song.
+add,Hey Jude,Beatles,20
+shw
+cmt,Test3: Adding multiple songs. 4:00 AM + Chaconne + September should be added.
+add,4:00 AM,Taeko Ohnuki,20
+add,Chaconne,Yiruma,20
+add,September,"Earth, Wind, and Fire",180
+shw
+cmt,Test4: Sorting the UtPod. Expected Order: Hey Jude -> September -> 4:00AM -> Chaconne.
+srt
+cmt,Test 5: Shuffling the UtPod.
+shf
+cmt,Test 6: Test getTMem (expect 512) and getRMem (expect 272wMaxMem).
+getTMem
+getRMem
+cmt,Test 7: Removing a song. Beatles and 4:00 should be removed.
+rm,Hey Jude,Beatles,20
+rm,4:00 AM,Taeko Ohnuki,20
+shw
+rm,September,"Earth, Wind, and Fire",180
+shw
+cmt,Test 8: Removing the last song Chaconne. List should now be empty.
+rm,Chaconne,Yiruma,20
+shw
+cmt,Test 9: Adding a too-large song. Expect Error -1 NO_MEMORY.
+add,Move Along,All American Rejects,520
+add,Without You,Oh Wonder,500
+cmt,Test 10: Adding a song with not enough remaining memory. Expect Error -1 NO_MEMORY. Only Without You is in the UtPod.
+add,Telephone Number,Junko Ohashi,13
+shw
+cmt,Test 11: Clearing UtPod. Expect empty list.
+clr
+shw
+cmt,Test 12: Sort/Shuffle Test start. Add 20 songs and shuffle.
+add,0,0,0
+add,1,1,1
+add,2,2,2
+add,3,3,3
+add,4,4,4
+add,5,5,5
+add,6,6,6
+add,7,7,7
+add,8,8,8
+add,9,9,9
+add,a,a,10
+add,b,b,11
+add,c,c,12
+add,d,d,13
+add,e,e,14
+add,e,f,15
+add,e,g,16
+add,e,h,17
+add,e,i,18
+add,e,i,19
+add,e,j,20
+cmt,Test 13: Sorting.
+srt
+cmt,Test 14: Shuffling.
+shf
+clr
+cmt,Test 15: Adding one test song
+add,test,test,10
+shw
+cmt,Test 16: Remove the added song - Expect no songs in the Pod
+rm,test,test,10
+shw
+cmt,Test 17: Add song t and d to the Pod
+add,t,t,11
+add,d,d,11
+shw
+cmt,Test 18: Remove song d from the pod
+rm,d,d,11
+shw
+cmt,Test 19: Remove song t from the pod
+rm,t,t,11
+shw
+cmt,Test 20: Add some songs to the pod
+add,A Song,Beatles,10
+add,B Song,Beatles,20
+add,C Song,Cyrus,3
+add,D Song,Bill,2
+add,E Song,Bob,56
+add,F Song,Bobby,167
+add,g Song,Bobby,167
+add,A Song,Ceatles,10
+add,A Song,Beatles,9
+add,A Song,Beatles,11
+add,A Song,Beatles,10
+shw
+cmt,Test 21: Remove song Beatles - B song
+rm,B Song,Beatles,20
+shw
+shf
+srt
+cmt,Test 22: Get total and remaining memory.
+getTMem
+getRMem
+end
